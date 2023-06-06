@@ -1,0 +1,161 @@
+<html lang="en">
+	<head>
+		<title>SLA.eclipse</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style type="text/css">
+			* { color: #808080; }
+			body { background-color: #000000; background-image: url('space.jpg'); background-position: top center; margin: 0px; overflow: hidden; }
+			#info { position: absolute; top: 0px; width: 100%; padding: 5px; font-family:Monospace; font-size:13px; text-align:center; }
+		</style>
+	</head>
+	<body oncontextmenu="return false;">
+
+		<script language="JavaScript">
+  /**
+    * Disable right-click of mouse, F12 key, and save key combinations on page
+    * By Arthur Gareginyan (https://www.arthurgareginyan.com)
+    * For full source code, visit https://mycyberuniverse.com
+    */
+  window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+    function disabledEvent(e){
+      if (e.stopPropagation){
+        e.stopPropagation();
+      } else if (window.event){
+        window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+    }
+  };
+</script>
+
+		<div id="container"></div>
+		<div id="info">Roll over the sun to create a eclipse.</div>		
+
+		<script type="text/javascript">
+
+			var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight,
+			SCREEN_WIDTH_HALF = window.innerWidth / 2, SCREEN_HEIGHT_HALF = window.innerHeight / 2,
+			LEVELS = 32;
+
+			var context, shape, shapeContext;
+			var planet;
+
+			var mouseX = 0, mouseY = 0;
+			var easedMouseX = 0, easedMouseY = 0;
+
+			init();
+			setInterval(loop, 1000/30);
+
+			function init() {
+			
+				var container, canvas;
+			
+				container = document.getElementById('container');
+
+				planet = document.createElement("canvas");
+				planet.width = 150;
+				planet.height = 150;
+				planet.style.position = 'absolute';
+				container.appendChild(planet);
+
+				planetContext = planet.getContext("2d");
+				planetContext.beginPath();
+				planetContext.arc(75 - (easedMouseX * 1000), 75 - (easedMouseY * 1000), 75, 0, Math.PI * 2, true);
+				planetContext.fillStyle = "rgb(0, 0, 0)";
+				planetContext.fill();
+
+				canvas = document.createElement("canvas");
+				canvas.width = 512;
+				canvas.height = 512;
+				canvas.style.position = 'absolute';
+				canvas.style.top = (SCREEN_HEIGHT_HALF - 256) + "px";
+				canvas.style.left = (SCREEN_WIDTH_HALF - 256) + "px";
+				container.appendChild(canvas);
+
+				context = canvas.getContext("2d");
+
+				shape = document.createElement("canvas");
+				shape.width = 128;
+				shape.height = 128;
+
+				shapeContext = shape.getContext("2d");
+
+				document.addEventListener('mousemove', onDocumentMouseMove, false);
+			}
+
+			function onDocumentMouseMove(event) {
+			
+				mouseX = - (event.clientX - SCREEN_WIDTH_HALF) * 0.001;
+				mouseY = - (event.clientY - SCREEN_HEIGHT_HALF) * 0.001;
+				
+			}
+
+			function loop() {
+			
+				easedMouseX += (mouseX - easedMouseX) * .2;
+				easedMouseY += (mouseY - easedMouseY) * .2;
+
+				planet.style.top = (SCREEN_HEIGHT_HALF - 75 - (easedMouseY * 1000)) + "px";
+				planet.style.left = (SCREEN_WIDTH_HALF - 75 - (easedMouseX * 1000)) + "px";
+
+				shapeContext.clearRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+				shapeContext.globalCompositeOperation = "source-over";
+				shapeContext.beginPath();
+				shapeContext.arc(64, 64, 64, 0, Math.PI * 2, true);
+				shapeContext.fillStyle = "rgb(255, 255, 230)";
+				shapeContext.fill();
+
+				shapeContext.globalCompositeOperation = "destination-out";
+				shapeContext.beginPath();
+				shapeContext.arc(64 - (easedMouseX * 1000), 64 - (easedMouseY * 1000), 75, 0, Math.PI * 2, true);
+				shapeContext.fillStyle = "rgb(0, 0, 0)";
+				shapeContext.fill();
+
+				context.clearRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+				for (var i = 0; i < LEVELS; i ++) {
+				
+					var size = 128 + i * 10;
+					var size_half = size * 0.5;
+					var x = 256 - size_half;
+					var y = 256 - size_half;
+
+					context.globalAlpha = (256 / ((i + 4) * (i + 4) * 20));
+					context.drawImage(shape, x, y, size, size);
+					
+				}
+
+			}
+	
+		</script>
+	</body>
+</html>

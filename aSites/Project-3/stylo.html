@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            CSS Animation
+        </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        
+        
+<link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript">
+        $(window).on('scroll',function(){
+            if($(window).scrollTop()){
+                $('nav').addClass('black');
+            }
+            else{
+                $('nav').removeClass('black');
+            }
+        })
+  /*menu button onclick function*/         $(document).ready(function(){
+                $('.menu h4').click(function(){
+                    $("nav ul").toggleClass("active")
+            })
+            })
+        </script>
+    </head>
+    <style>
+        body{
+	margin: 0;
+	padding: 0;
+   
+}
+.p1 img{
+    width: 100%;
+  height: 140vh;
+
+  object-fit: cover;
+  filter: brightness(.5);
+}
+.p1 h1{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: 'Arizonia', cursive; 
+  font-size: 80px;
+  line-height: 52px;
+  font-weight: lighter;
+  text-align: center;
+}
+.responsive-bar{
+    display: none;
+}
+nav{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    padding: 25px 0px;
+    box-sizing: border-box;
+    transition: .5s;
+    z-index: 1;
+}
+nav.black{
+    background: rgb(36, 35, 35);
+    height: 100px;
+    padding: 10px 0px;
+    z-index: 1;
+}
+.gallery{
+  width: 70%;
+  display: flex;
+  
+  box-sizing: border-box;  
+  margin: 20px; margin-left: 15%;
+}
+
+.imgbox{
+    margin:0% 0%;
+    flex-grow: 1;
+    flex-basis: 0;
+    transition: 0.5s;
+    position: relative;
+  text-align: center;
+  color: white;
+}
+.imgbox img{
+    height:400px;
+    width: 100%;
+
+    object-fit: cover;
+    transition: 0.6s;
+
+}
+.imgbox:hover{
+    opacity: 90%;
+    height: 400px;
+    flex-basis: 50%;
+}
+.bottom-left {
+  font-size: 28px;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  color: black;
+  opacity: 0%;
+  
+}
+.bottom-left:hover {
+  font-size: 28px;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  color: whitesmoke;
+  opacity: 100%;
+}
+.gallery :hover.active{
+    height: 500px;
+    flex-basis: 0;
+    
+}
+.active{
+    flex-basis: 50%;
+}
+
+.box{
+    font-family: 'Raleway', sans-serif;
+  padding: 3em 5em;
+  font-size: 34px;
+  font-family:'Times New Roman', Times, serif;
+  color:rgb(8, 8, 8);
+}
+.box span{
+    font-size:65px ;
+   margin-left: 3%;
+   margin-top: 9em;
+  
+   text-transform: uppercase;
+    color:linear-gradient(#9BC90D 0%, #79A70A 100%); ;
+}
+
+
+
+nav > ul{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    float: right;
+}
+nav > ul > li{
+    list-style: none;
+    display: inline-block;
+}
+nav > ul > li > a:hover{
+    background: rgb(39, 39, 39);
+    color: rgb(255, 255, 255);
+}
+nav > ul > li > a{
+    color: #c4c4c4;
+    text-decoration: none;
+    text-transform: uppercase; /*for capitalisation of letters */
+    line-height: 60px;
+    padding: 5px 15px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+   
+    transition: .5s;   
+}
+nav.black > ul > li > a{
+    color: #fff;
+    line-height: 50px;
+}
+
+@media(max-width:768px){
+    .responsive-bar{
+        display: block;
+        width: 100%;
+        height: 60px;
+        background: #262626;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 5px 20px;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+    
+    .responsive-bar .menu h4{
+        float: right;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        line-height: 80px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+    nav{
+        padding: 0;
+    }
+    nav,
+    nav.black{
+    background: #262626;
+    height: 60px;
+    padding: 0;
+    }
+    
+    nav ul{
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        background: #262626;
+        float: none;
+        display: none;
+    }
+    nav ul.active{
+        display: block;
+    }
+    nav ul li{
+        width: 100%;
+    }
+    nav ul li a{
+        display: block;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        line-height: 30px !important;
+        color: #fff;
+        
+    }
+
+    nav > ul{
+        width: 100%;
+        display: none;
+    }
+    nav > ul > li{
+        display: block;
+        text-align: center;
+    }
+    .active{
+        display: block;
+    }
+}
+
+
+
+
+
+
+:root {
+	font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
+}
+nav, button, input {
+	font: 1em Hind, sans-serif;
+	line-height: 1.5em;
+}
+nav, input {
+	color: #171717;
+}
+nav, .search-bar {
+	display: flex;
+}
+
+
+.search-bar input,
+.search-btn, 
+.search-btn:before, 
+.search-btn:after {
+	transition: all 0.25s ease-out;
+}
+.search-bar input,
+.search-btn {
+	width: 3em;
+	height: 3em;
+}
+.search-bar input:invalid:not(:focus),
+.search-btn {
+	cursor: pointer;
+}
+.search-bar,
+.search-bar input:focus,
+.search-bar input:valid  {
+	width: 100%;
+}
+.search-bar input:focus,
+.search-bar input:not(:focus) + .search-btn:focus {
+	outline: transparent;
+}
+.search-bar {
+	margin: auto;
+	padding: 1.5em;
+	justify-content: center;
+	max-width: 30em;
+}
+.search-bar input {
+	background: transparent;
+	border-radius: 1.5em;
+	box-shadow: 0 0 0 0.4em #aaaaaa inset;
+	padding: 0.75em;
+	transform: translate(0.5em,0.5em) scale(0.5);
+	transform-origin: 100% 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.search-bar input::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+.search-bar input:focus,
+.search-bar input:valid {
+	background: #fff;
+	border-radius: 0.375em 0 0 0.375em;
+	box-shadow: 0 0 0 0.1em #d9d9d9 inset;
+	transform: scale(1);
+}
+.search-btn {
+	background: #d3d2d2;
+	border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+	padding: 0.75em;
+	position: relative;
+	transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);
+	transform-origin: 0 50%;
+}
+.search-btn:before, 
+.search-btn:after {
+	content: "";
+	display: block;
+	opacity: 0;
+	position: absolute;
+}
+.search-btn:before {
+	border-radius: 50%;
+	box-shadow: 0 0 0 0.2em #f1f1f1 inset;
+	top: 0.75em;
+	left: 0.65em;
+	width: 1.2em;
+	height: 1.2em;
+}
+.search-btn:after {
+	background: #f1f1f1;
+	border-radius: 0 0.25em 0.25em 0;
+	top: 51%;
+	left: 51%;
+	width: 0.75em;
+	height: 0.25em;
+	transform: translate(0.2em,0) rotate(45deg);
+	transform-origin: 0 50%;
+}
+.search-btn span {
+	display: inline-block;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap");
+
+.container {
+  
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  font-family: 'Baloo Paaji 2', cursive;
+}
+
+.social-icons {
+  padding: 0;
+ 
+  padding-top: 0;
+  list-style: none;
+  margin: 1em;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin: 0.15em;
+  position: relative;
+  font-size: 1em;
+}
+
+.social-icons i {
+  color: #fff;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transition: all 265ms ease-out;
+}
+
+.social-icons a {
+  display: inline-block;
+}
+
+.social-icons a:before {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  content: " ";
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  display: block;
+  background: linear-gradient(45deg, #ff0000, #fb01ff);
+  transition: all 265ms ease-out;
+}
+
+.social-icons a:hover:before {
+  transform: scale(0);
+  transition: all 265ms ease-in;
+}
+
+.social-icons a:hover i {
+  transform: scale(2.2);
+  -ms-transform: scale(2.2);
+  -webkit-transform: scale(2.2);
+  color: #ff003c;
+  background: -webkit-linear-gradient(45deg, #ae00ff, #f404f8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 265ms ease-in;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  font-size: 1.2em;
+}
+
+/* Active state */
+.search-bar input:focus + .search-btn,
+.search-bar input:valid + .search-btn {
+	background: #2762f3;
+	border-radius: 0 0.375em 0.375em 0;
+	transform: scale(1);
+}
+.search-bar input:focus + .search-btn:before, 
+.search-bar input:focus + .search-btn:after,
+.search-bar input:valid + .search-btn:before, 
+.search-bar input:valid + .search-btn:after {
+	opacity: 1;
+}
+.search-bar input:focus + .search-btn:hover,
+.search-bar input:valid + .search-btn:hover,
+.search-bar input:valid:not(:focus) + .search-btn:focus {
+	background: #0c48db;
+}
+.search-bar input:focus + .search-btn:active,
+.search-bar input:valid + .search-btn:active {
+	transform: translateY(1px);
+}
+.para p{
+    padding: 4% 10%;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	nav, input {
+		color: #f1f1f1;
+	}
+	
+	.search-bar input {
+		box-shadow: 0 0 0 0.4em #f1f1f1 inset;
+	}
+	.search-bar input:focus,
+	.search-bar input:valid {
+		background: #6b6a6a;
+		box-shadow: 0 0 0 0.1em #3d3d3d inset;
+	}
+	.search-btn {
+		background: #f1f1f1;
+	}
+}
+* {
+  box-sizing: border-box;
+}
+.zoom1{
+    display: flex;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+.zoom1:after {
+  
+content: "";
+display: table;
+clear: both;
+
+}
+.zoom{
+  
+    float: left;
+  width: 100%;
+  flex: 50%;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.zoom img{
+
+    height:100%;
+    width:100%;
+}
+.zoom:hover {
+  
+  transform: scale(1.05); 
+  opacity: 90%;
+  
+}
+
+.note{
+    padding-left:10% ;
+    height: 200px;
+    width: 800px;
+    
+}
+.note-inner{
+    
+    background-color: rgb(33, 172, 33);
+    height: 160px;
+}
+.note-in{
+    border-style:solid;
+    border-radius: 0px;
+    border-width: 0px;
+    border-left-width: 6px;
+    border-color:rgb(83, 39, 13);
+    background-color:rgb(218, 140, 38);
+    height: 270px;
+}
+.note-inner:hover{
+    background-color: rgb(7, 141, 7);
+}
+
+.note2{
+    border-style:solid;
+    border-radius: 0px;
+    border-width: 0px;
+    border-color:rgb(83, 39, 13);
+    background-image: url("n.jpg");
+}
+.note2:hover{
+    opacity: 80%;
+}
+.word{
+    opacity: 0%;
+    padding-left: 10px;
+}
+.word:hover{
+    transition: 0.9s;
+    opacity:100%;
+}
+p2{
+    color: whitesmoke;
+}
+.blockquote{
+    padding-top:40%;
+    
+}
+blockquote {
+    background-color: #fae10198;
+  margin: 0 auto;
+  padding: 1em;
+  border-left: 5px solid rgb(5, 5, 5);
+  
+}
+blockquote:before {
+  display: none;
+}
+blockquote:not(:first-of-type) {
+  margin-top: .5em;
+}
+blockquote p {
+  color: #555;
+  font-size: 12pt;
+  line-height: 1.4;
+  font-family: 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+}
+h1{
+    color: #171717;
+    font-size:28px;
+}
+blockquote footer {
+  margin-top: .5em;
+  padding: 0;
+  color: rgb(63, 62, 62);
+  font-size: 14pt;
+  text-align: left;
+  font-style: italic;
+}
+blockquote footer:before {
+  content: '— ';
+}
+blockquote:nth-of-type(even) {
+  text-align: right;
+  border-left: none;
+  border-right: 5px solid rgb(8, 8, 8);
+}
+blockquote:nth-of-type(even) footer {
+  text-align: right;
+}
+blockquote:nth-of-type(even) footer:before {
+  content: '';
+}
+blockquote:nth-of-type(even) footer:after {
+  content: ' —';
+}
+@element 'blockquote' and (min-width: 300px) {
+  blockquote {
+    padding: 1em 20% 1em 1em;
+
+  }
+  blockquote p {
+    font-size: 14pt;
+  }
+  blockquote:nth-of-type(even) {
+    padding: 1em 1em 1em 20%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three columns of equal width */
+.columns {
+    padding-top: 20%;
+  float: left;
+  width: 33.3%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+/* Style the list */
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* Add shadows on hover */
+.price:hover{
+  
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+
+}
+
+/* Pricing header */
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+  
+}
+
+/* List items */
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Grey list item */
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+/* The "Sign Up" button */
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Change the width of the three columns to 100%
+(to stack horizontally on small screens) */
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+/*Montserrat font*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+/*basic reset*/
+
+
+.grid {
+  padding-top: 2%;
+	width: 900px; height: 200px; margin: 100px auto 50px auto;
+	perspective: 400px; /*For 3d*/
+}
+.grid img {
+  width: 90px; height: 90px; display: block; float: left;
+  }
+
+.animate {
+  
+	font: 12px Montserrat; text-transform: uppercase;
+	padding: 50px 20px; border-radius: 5px;
+	cursor: pointer;
+}
+
+
+#foot{
+
+    padding-top: 70%;
+}
+</style>
+
+
+
+
+
+
+<body oncontextmenu="return false;" onmousedown = 'return false' onselectstart = 'return false' oncopy = 'return false' oncut = 'return false'>
+        <div class="responsive-bar">
+        <div class="logo">
+          
+            </div>
+            <div class="menu">
+            <h4>Menu</h4>
+            </div>
+        </div>
+		<nav>
+            <div class="logo">
+       
+            </div>
+         <ul><li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Testimonial</a></li>
+            <li><a href="#">Contact Us</a></li> <li>
+            <form action="" class="search-bar">
+                <input type="search" name="search" pattern=".*\S.*" required>
+                <button class="search-btn" type="submit">
+                    <span>Search</span>
+                </button>
+            </form>
+         </li>
+            
+            </ul></nav>
+            
+        
+  <div class="p1">
+    <img src="u.jpg" alt="Placeholder-Image">
+   
+      <h1>A good friend is like<br>
+           a four-leaf clover:<br>
+           hard to find <br>
+           <center>&</center> 
+           lucky to have</h1>
+    
+  </div><br>
+
+
+
+
+<div class="box">
+    
+    <p>Hello ! <br> welcome to CSS Animations !<br>
+       
+              Have some :
+        <span 
+           class="txt-rotate"
+           data-period="2000"
+           data-rotate='[ " Fun!  :)", " enjoy!  :)", " growth!  :)", " knowledge!  :)", " happy moments!  :)" ]'></span>
+         </p>
+  </div>
+  
+<div class="gallery">
+    <div class="imgbox">
+        <img src="1.jpg">
+        <div class="bottom-left"><br><br><br><br><br><br><br><br><br>NEWYORK<br>Welcome to city of Bridges.</div>
+    </div>
+    <div class="imgbox">
+        <img src="2.jpg">
+        <div class="bottom-left"><br><br><br><br><br><br><br><br><br>SINGAPORE<br>Welcome to city of waterfalls.</div>
+    </div>
+    <div class="imgbox">
+        <img src="3.jpg">
+        <div class="bottom-left"><br><br><br><br><br><br><br><br><br>SPACE<br>Welcome to a silent Place.</div>
+    </div>
+    <div class="imgbox">
+        <img src="4.jpg">
+        <div class="bottom-left"><br><br><br><br><br><br><br><br><br>DESERT<br>Welcome to Arid Area.</div>
+    </div>
+    <div class="imgbox">
+        <img src="5.jpg">
+        <div class="bottom-left"><br><br><br><br><br><br><br><br><br>MOUNTAINS<br>Welcome to Hills for Peace .</div>
+    </div>
+    <div class="imgbox">
+        <img src="6.jpg">
+        <div class="bottom-left"><br><br><br><br><br><br><br><br><br>FOREST<br>Welcome to the beauty of nature.</div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="zoom1">
+    <div class="zoom">
+        <img src="a.jpg">
+    </div>
+    <div class="zoom">
+        <img src="b.jpg">
+    </div>
+    <div class="zoom">
+        <img src="c.jpg">
+    </div>
+    <div class="zoom">
+        <img src="d.jpg">
+    </div>
+    <div class="zoom">
+        <img src="e.jpg">
+    </div>
+    <div class="zoom">
+        <img src="f.jpg">
+    </div>
+</div>
+
+
+
+
+<div class="note">
+    <div class="note-in">
+    <h4>
+     | Note-1:<br>| abc
+    </h4>
+    <div class="note-inner">
+            <p2>title contents<br>
+                work
+            </p2> 
+    </div>
+    </div>
+    <div class="note2">
+       
+        <div class="word">
+                <p2><br><h1 style="color: yellow;">IF WE COULD LAUGH</h1>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
+                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                      when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                      It has survived not only five centuries, but also the leap into electronic typesetting, 
+                      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+                       containing Lorem Ipsum passages, and more recently with desktop publishing software <br>like Aldus PageMaker 
+                       including versions of Lorem Ipsum.<br><br>
+                </p2> 
+        </div>
+        </div>
+</div>
+<div class="blockquote">
+<h1>Alternating Blockquotes</h1>
+<blockquote>
+  <p><q>The U.S. is fast approaching $19,000,000,000,000.00 in national debt. This is mathematically impossible to ever pay back &hellip; even if every American was taxed at 100%.</q></p>
+  <footer>Charles Goyette, The Dollar Meltdown</footer>
+</blockquote>
+<blockquote>
+  <p><q>79 million Baby Boomers are about to retire, pull their money out of the economy, and demand their $35 Trillion Dollars in Social Security &amp; Medicare. Think that through&hellip;</q></p>
+  <footer>Robert Kiyosaki</footer>
+</blockquote>
+<blockquote>
+  <p><q>23.4% of Americans are Currently Unemployed &hellip; not the 9.1% they&rsquo;d like you to believe.</q></p>
+  <footer>ShadowStats.com</footer>
+</blockquote>
+<blockquote>
+  <p><q>There are currently 5 job seekers for every 1 job opening in America, forcing wages down by 10%.</q></p>
+  <footer>The Wall Street Journal</footer>
+</blockquote>
+<blockquote>
+  <p><q>Adjusted for inflation, the average yearly earnings for an American male are lower than in 1978.</q></p>
+  <footer>The Wall Street Journal</footer>
+</blockquote>
+<blockquote>
+  <p><q>1 out of every 5 Americans is on government support of some sort</q></p>
+  <footer>The Wall Street Journal</footer>
+</blockquote>
+<blockquote>
+  <p><q>America will lose its position as the world&rsquo;s superpower in less than 10 years.</q></p>
+  <footer>Goldman Sachs</footer>
+</blockquote>
+<blockquote>
+  <p><q>We&rsquo;re actually in a depression right now.  They just don&rsquo;t want us to know that.</q></p>
+  <footer>Anonymous</footer>
+</blockquote>
+<blockquote>
+  <p><q>If we don&rsquo;t do something soon &hellip; our recovery is on the verge of faltering.</q></p>
+  <footer>Ben Bernanke, The Fed</footer>
+</blockquote>
+<blockquote>
+  <p>&ldquo;The stock bubble of 2001 and the housing bubble of 2007 were mere sideshows for what&rsquo;s coming.</p>
+  <p>The main act is just around the corner &hellip;&rdquo;</p>
+  <footer>Chris Martenson Ph.D., The Crash Course</footer>
+</blockquote>
+
+</div>
+
+
+
+
+<!-- a simple grid and an animate button -->
+<div class="grid"></div>
+<div class="animate"></div>
+
+<!-- jQuery -->
+
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Basic</li>
+    <li class="grey">$ 9.99 / year</li>
+    <li>10GB Storage</li>
+    <li>10 Emails</li>
+    <li>10 Domains</li>
+    <li>1GB Bandwidth</li>
+    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Pro</li>
+    <li class="grey">$ 24.99 / year</li>
+    <li>25GB Storage</li>
+    <li>25 Emails</li>
+    <li>25 Domains</li>
+    <li>2GB Bandwidth</li>
+    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Premium</li>
+    <li class="grey">$ 49.99 / year</li>
+    <li>50GB Storage</li>
+    <li>50 Emails</li>
+    <li>50 Domains</li>
+    <li>5GB Bandwidth</li>
+    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+  </ul>
+</div>
+
+<script>document.oncontextmenu = new Function("return false;");</script>
+<script>
+  /* To Disable Inspect Element */
+  $(document).bind("contextmenu",function(e) {
+   e.preventDefault();
+  });
+  
+  $(document).keydown(function(e){
+      if(e.which === 123){
+         return false;
+      }
+  });
+  </script>
+<script>
+  document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+  return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
+  return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+  return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+  return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+  return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)){
+  return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)){
+  return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)){
+  return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)){
+  return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
+  return false;
+  }
+  }
+  </script>
+<script>//Creating 50 thumbnails inside .grid
+  //the images are stored on the server serially. So we can use a loop to generate the HTML.
+  var images = "", count = 50;
+  for(var i = 1; i <= count; i++)
+    images += '<img src="imgs/'+i+'.jpg" />';
+    
+  //appending the images to .grid
+  $(".grid").append(images);
+  
+  var d = 0; //delay
+  var ry, tz, s; //transform params
+  
+  //animation time
+  $(".grid").on("mouseenter", function(){
+    //fading out the thumbnails with style
+    $("img").each(function(){
+      d = Math.random()*1000; //1ms to 1000ms delay
+      $(this).delay(d).animate({opacity: 0}, {
+        //while the thumbnails are fading out, we will use the step function to apply some transforms. variable n will give the current opacity in the animation.
+        step: function(n){
+          s = 1-n; //scale - will animate from 0 to 1
+          $(this).css("transform", "scale("+s+")");
+        }, 
+        duration: 800, 
+      })
+    }).promise().done(function(){
+      //after *promising* and *doing* the fadeout animation we will bring the images back
+    storm();
+    })
+  })
+  //bringing back the images with style
+  function storm()
+  {
+    $("img").each(function(){
+      d = Math.random()*1000;
+      $(this).delay(d).animate({opacity: 1}, {
+        step: function(n){
+          //rotating the images on the Y axis from 360deg to 0deg
+          ry = (1-n)*360;
+          //translating the images from 1000px to 0px
+          tz = (1-n)*1000;
+          //applying the transformation
+          $(this).css("transform", "rotateY("+ry+"deg) translateZ("+tz+"px)");
+        }, 
+        duration: 2000, 
+        //some easing fun. Comes from the jquery easing plugin.
+        easing: 'easeOutQuint', 
+      })
+    })
+  }
+  
+  </script>
+<script>
+  // t: current time, b: begInnIng value, c: change In value, d: duration
+jQuery.easing['jswing'] = jQuery.easing['swing'];
+
+jQuery.extend( jQuery.easing,
+{
+	def: 'easeOutQuad',
+	swing: function (x, t, b, c, d) {
+		//alert(jQuery.easing.default);
+		return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
+	},
+	easeInQuad: function (x, t, b, c, d) {
+		return c*(t/=d)*t + b;
+	},
+	easeOutQuad: function (x, t, b, c, d) {
+		return -c *(t/=d)*(t-2) + b;
+	},
+	easeInOutQuad: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t + b;
+		return -c/2 * ((--t)*(t-2) - 1) + b;
+	},
+	easeInCubic: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t + b;
+	},
+	easeOutCubic: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t + 1) + b;
+	},
+	easeInOutCubic: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t + b;
+		return c/2*((t-=2)*t*t + 2) + b;
+	},
+	easeInQuart: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t*t + b;
+	},
+	easeOutQuart: function (x, t, b, c, d) {
+		return -c * ((t=t/d-1)*t*t*t - 1) + b;
+	},
+	easeInOutQuart: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t*t + b;
+		return -c/2 * ((t-=2)*t*t*t - 2) + b;
+	},
+	easeInQuint: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t*t*t + b;
+	},
+	easeOutQuint: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t*t*t + 1) + b;
+	},
+	easeInOutQuint: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
+		return c/2*((t-=2)*t*t*t*t + 2) + b;
+	},
+	easeInSine: function (x, t, b, c, d) {
+		return -c * Math.cos(t/d * (Math.PI/2)) + c + b;
+	},
+	easeOutSine: function (x, t, b, c, d) {
+		return c * Math.sin(t/d * (Math.PI/2)) + b;
+	},
+	easeInOutSine: function (x, t, b, c, d) {
+		return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+	},
+	easeInExpo: function (x, t, b, c, d) {
+		return (t==0) ? b : c * Math.pow(2, 10 * (t/d - 1)) + b;
+	},
+	easeOutExpo: function (x, t, b, c, d) {
+		return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
+	},
+	easeInOutExpo: function (x, t, b, c, d) {
+		if (t==0) return b;
+		if (t==d) return b+c;
+		if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
+		return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
+	},
+	easeInCirc: function (x, t, b, c, d) {
+		return -c * (Math.sqrt(1 - (t/=d)*t) - 1) + b;
+	},
+	easeOutCirc: function (x, t, b, c, d) {
+		return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
+	},
+	easeInOutCirc: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return -c/2 * (Math.sqrt(1 - t*t) - 1) + b;
+		return c/2 * (Math.sqrt(1 - (t-=2)*t) + 1) + b;
+	},
+	easeInElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		return -(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+	},
+	easeOutElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
+	},
+	easeInOutElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d/2)==2) return b+c;  if (!p) p=d*(.3*1.5);
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		if (t < 1) return -.5*(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+		return a*Math.pow(2,-10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )*.5 + c + b;
+	},
+	easeInBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158;
+		return c*(t/=d)*t*((s+1)*t - s) + b;
+	},
+	easeOutBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158;
+		return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+	},
+	easeInOutBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158; 
+		if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
+		return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
+	},
+	easeInBounce: function (x, t, b, c, d) {
+		return c - jQuery.easing.easeOutBounce (x, d-t, 0, c, d) + b;
+	},
+	easeOutBounce: function (x, t, b, c, d) {
+		if ((t/=d) < (1/2.75)) {
+			return c*(7.5625*t*t) + b;
+		} else if (t < (2/2.75)) {
+			return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
+		} else if (t < (2.5/2.75)) {
+			return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
+		} else {
+			return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
+		}
+	},
+	easeInOutBounce: function (x, t, b, c, d) {
+		if (t < d/2) return jQuery.easing.easeInBounce (x, t*2, 0, c, d) * .5 + b;
+		return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
+	}
+});
+
+</script>
+
+<script>
+    var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+</script>
+
+
+
+
+
+      <footer id="foot">
+        <center><ul class="social-icons">
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-codepen"></i></a></li>
+          </ul>
+          
+        </center>
+      </footer>
+    </div>
+   
+
+
+
+
+	</body>
